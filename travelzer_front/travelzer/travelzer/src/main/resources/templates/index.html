@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>ID :</th>
+            <th>Nom :</th>
+            <th>Couleur :</th>
+            <th>Nb de km :</th>
+            <th>Image :</th>
+            <th>Immatriculation :</th>
+            <th>Tarif :</th>
+            <th>Catégorie :</th>
+        </tr>
+
+        <tr th:each ="vehicule : ${vehiculeList}">
+            <td th:utext="${vehicule.id}"></td>
+            <td th:utext="${vehicule.model.name}"></td>
+            <td th:utext="${vehicule.color}"></td>
+            <td th:utext="${vehicule.kmcounter}"></td>
+            <td th:utext="${vehicule.image}"></td>
+            <td th:utext="${vehicule.matriculation}"></td>
+            <td th:utext="${vehicule.pricerate}"></td>
+            <td th:utext="${vehicule.category.name}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
