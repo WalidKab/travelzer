@@ -41,4 +41,10 @@ public class VehiculeController {
     public void deleteVehicule(@PathVariable int id){
         dbVehicule.deleteById(id);
     }
+
+    @GetMapping(value = "/vehicules/{category}")
+    public @ResponseBody
+    Iterable<Vehicule> vehiculesByCategory(@PathVariable String name) {
+        return dbVehicule.findByModel(name);
+    }
 }
