@@ -9,12 +9,23 @@ public class Brand {
 
     private String name;
 
+    public String getImglogo() {
+        return imglogo;
+    }
+
+    public void setImglogo(String imglogo) {
+        this.imglogo = imglogo;
+    }
+
+    private String imglogo;
+
     public Brand() {
     }
 
-    public Brand(int id, String name) {
+    public Brand(int id, String name, String imglogo) {
         this.id = id;
         this.name = name;
+        this.imglogo = imglogo;
     }
 
     public int getId() {

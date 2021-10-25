@@ -7,14 +7,20 @@
 </head>
 <body>
 
-<p th:utext="${vehicule.id}"> </p>
-<p th:utext="${vehicule.model.name}"> </p>
-<p th:utext="${vehicule.color}"> </p>
-<p th:utext="${vehicule.kmcounter}"> </p>
-<img th:src="${vehicule.image}">
-<p th:utext="${vehicule.matriculation}"> </p>
-<p th:utext="${vehicule.pricerate}"> </p>
-<p th:utext="${vehicule.category.name}"> </p>
+<div class="card">
+    <div class="top-card">
+        <p th:utext="${vehicule.id}"> </p>
+        <p th:utext="${vehicule.matriculation}"> </p>
+    </div>
+    <div class="brand-card">
+        <p th:utext="${vehicule.model.brand_id.name}"> </p>
+        <img th:src="@{/images/} + ${vehicule.model.brand_id.imglogo}">
+    </div>
+    <div class="brand-card">
+        <p th:utext="${vehicule.model.name}"> </p>
+        <img th:src="@{/images/} + ${vehicule.image}">
+    </div>
+</div>
 
 </body>
 </html>
