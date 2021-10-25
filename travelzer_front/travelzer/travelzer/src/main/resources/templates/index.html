@@ -7,29 +7,7 @@
 </head>
 <body>
 
-    <table>
-        <tr>
-            <th>IDrr :</th>
-            <th>Nom :</th>
-            <th>Couleur :</th>
-            <th>Nb de km :</th>
-            <th>Image :</th>
-            <th>Immatriculation :</th>
-            <th>Tarif :</th>
-            <th>Catégorie :</th>
-        </tr>
 
-        <tr th:each ="vehicule : ${vehiculeList}">
-            <td th:utext="${vehicule.id}"></td>
-            <td th:utext="${vehicule.model.name}"></td>
-            <td th:utext="${vehicule.color}"></td>
-            <td th:utext="${vehicule.kmcounter}"></td>
-            <td th:utext="${vehicule.image}"></td>
-            <td th:utext="${vehicule.matriculation}"></td>
-            <td th:utext="${vehicule.pricerate}"></td>
-            <td th:utext="${vehicule.category.name}"></td>
-        </tr>
-    </table>
-
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>
 </html>

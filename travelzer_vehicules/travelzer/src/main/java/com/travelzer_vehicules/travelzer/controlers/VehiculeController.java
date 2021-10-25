@@ -1,6 +1,7 @@
 package com.travelzer_vehicules.travelzer.controlers;
 
 import com.travelzer_vehicules.travelzer.dbs.DbVehicule;
+import com.travelzer_vehicules.travelzer.models.Category;
 import com.travelzer_vehicules.travelzer.models.Vehicule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +44,7 @@ public class VehiculeController {
 
     @GetMapping(value = "/vehicules/category/{id}")
     public @ResponseBody
-    List<Vehicule> vehiculesByCategory(@PathVariable int id) {
+    List<Vehicule> vehiculesByCategory(@PathVariable Category id) {
         return dbVehicule.findVehiclesByCategory(id);
     }
 }

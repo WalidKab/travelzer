@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<p th:utext="${vehicule.id}"> </p>
+<p th:utext="${vehicule.model.name}"> </p>
+<p th:utext="${vehicule.color}"> </p>
+<p th:utext="${vehicule.kmcounter}"> </p>
+<img th:src="${vehicule.image}">
+<p th:utext="${vehicule.matriculation}"> </p>
+<p th:utext="${vehicule.pricerate}"> </p>
+<p th:utext="${vehicule.category.name}"> </p>
 
 </body>
 </html>
