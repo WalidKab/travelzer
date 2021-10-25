@@ -61,3 +61,26 @@ header{
         margin-right: 15rem;
     }
 }
+
+footer{
+    width:100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    width : 70%;
+    height: 10rem;
+    display : flex;
+    flex-direction: row;
+    justify-content : space-between;
+    margin-bottom: 0px;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}

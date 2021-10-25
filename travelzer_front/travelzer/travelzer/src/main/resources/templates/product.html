@@ -11,7 +11,7 @@
 <p th:utext="${vehicule.model.name}"> </p>
 <p th:utext="${vehicule.color}"> </p>
 <p th:utext="${vehicule.kmcounter}"> </p>
-<img th:src="${vehicule.image}">
+<img th:src="@{/images/} + ${vehicule.image}">
 <p th:utext="${vehicule.matriculation}"> </p>
 <p th:utext="${vehicule.pricerate}"> </p>
 <p th:utext="${vehicule.category.name}"> </p>
