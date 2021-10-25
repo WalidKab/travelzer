@@ -44,6 +44,6 @@ public class VehiculeController {
     @GetMapping(value = "/vehicules/category/{id}")
     public @ResponseBody
     List<Vehicule> vehiculesByCategory(@PathVariable int id) {
-        return dbVehicule.findVehiclesByModel(id);
+        return dbVehicule.findVehiclesByCategory(id);
     }
 }

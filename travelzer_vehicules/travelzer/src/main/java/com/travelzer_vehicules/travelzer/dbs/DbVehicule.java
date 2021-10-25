@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface DbVehicule extends CrudRepository<Vehicule, Integer>{
 
-    List<Vehicule> findVehiclesByModel(int id);
+    List<Vehicule> findVehiclesByCategory(int id);
 }
