@@ -1,12 +1,11 @@
 package com.travelzer_vehicules.travelzer.controlers;
 
-import com.travelzer_vehicules.travelzer.dbs.DbModel;
 import com.travelzer_vehicules.travelzer.dbs.DbVehicule;
-import com.travelzer_vehicules.travelzer.models.Model;
 import com.travelzer_vehicules.travelzer.models.Vehicule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -44,7 +43,7 @@ public class VehiculeController {
 
     @GetMapping(value = "/vehicules/category/{id}")
     public @ResponseBody
-    Iterable<Vehicule> vehiculesByCategory(@PathVariable int id) {
-        return dbVehicule.findByModel(id);
+    List<Vehicule> vehiculesByCategory(@PathVariable int id) {
+        return dbVehicule.findVehiclesByModel(id);
     }
 }
