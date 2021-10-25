@@ -13,12 +13,24 @@ public class Brand {
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 
+    @Column(name = "imglogo", nullable = false)
+    private String imglogo;
+
     public Brand() {
     }
 
-    public Brand(int id, String name) {
+    public Brand(int id, String name, String imglogo) {
         this.id = id;
         this.name = name;
+        this.imglogo = imglogo;
+    }
+
+    public String getImglogo() {
+        return imglogo;
+    }
+
+    public void setImglogo(String imglogo) {
+        this.imglogo = imglogo;
     }
 
     public int getId() {

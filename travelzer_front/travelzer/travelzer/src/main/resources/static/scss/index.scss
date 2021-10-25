@@ -1,0 +1,63 @@
+header{
+    background: black;
+    height: 6rem;
+    color : white;
+}
+
+.header-links{
+    display:flex;
+    flex-direction : row;
+    padding-top : 2rem;
+    font-size: 2rem;
+}
+
+.header-right{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    padding-right: 5rem;
+    .dropdown-sub{
+        margin-left: 25rem;
+        margin-right: 20rem;
+    }
+}
+
+.catalogue{
+    display: block;
+    z-index: 9999;
+}
+
+.catalogue:hover, .catalogue:focus{
+    .dropdown-header{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        height: 11.5rem;
+        background-color: grey;
+        margin-top: 2rem;
+        padding-left: 5rem;
+    }
+}
+
+.dropdown-header{
+    width: 200%;
+    margin-left: -660px !important;
+    display: none;
+    font-size: 1.4rem;
+    a{
+        margin-bottom: 1.5rem;
+        .link-all-products{
+            padding-top:1rem;
+        }
+    }
+}
+
+.header-left{
+    padding-left: 5rem;
+    .logo{
+        margin-right:5rem;
+    }
+    .home-link-header{
+        margin-right: 15rem;
+    }
+}
