@@ -42,9 +42,9 @@ public class VehiculeController {
         dbVehicule.deleteById(id);
     }
 
-    @GetMapping(value = "/vehicules/{category}")
+    @GetMapping(value = "/vehicules/category/{id}")
     public @ResponseBody
-    Iterable<Vehicule> vehiculesByCategory(@PathVariable String name) {
-        return dbVehicule.findByModel(name);
+    Iterable<Vehicule> vehiculesByCategory(@PathVariable int id) {
+        return dbVehicule.findByModel(id);
     }
 }
