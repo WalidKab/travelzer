@@ -1,5 +1,6 @@
 package com.travelzer_vehicules.travelzer.controlers;
 
+import com.travelzer_vehicules.travelzer.dbs.DbCategory;
 import com.travelzer_vehicules.travelzer.dbs.DbVehicule;
 import com.travelzer_vehicules.travelzer.models.Category;
 import com.travelzer_vehicules.travelzer.models.Vehicule;
@@ -14,6 +15,9 @@ public class VehiculeController {
 
     @Autowired
     private DbVehicule dbVehicule;
+
+    @Autowired
+    private DbCategory dbCategory;
 
     @GetMapping(value = "/vehicules")
     public @ResponseBody
@@ -40,6 +44,12 @@ public class VehiculeController {
     @DeleteMapping(value = "/vehicule/{id}")
     public void deleteVehicule(@PathVariable int id){
         dbVehicule.deleteById(id);
+    }
+
+    @GetMapping(value = "/categories")
+    public @ResponseBody
+    Iterable<Category> categoryList() {
+        return dbCategory.findAll();
     }
 
     @GetMapping(value = "/vehicules/category/{id}")
