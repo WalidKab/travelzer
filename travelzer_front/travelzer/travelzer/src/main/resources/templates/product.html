@@ -4,17 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title th:utext="${vehicule.model.name} + ' ' + ${vehicule.matriculation}"></title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
-<p th:utext="${vehicule.id}"> </p>
-<p th:utext="${vehicule.model.name}"> </p>
-<p th:utext="${vehicule.color}"> </p>
-<p th:utext="${vehicule.kmcounter}"> </p>
-<img th:src="@{/images/} + ${vehicule.image}">
-<p th:utext="${vehicule.matriculation}"> </p>
-<p th:utext="${vehicule.pricerate}"> </p>
-<p th:utext="${vehicule.category.name}"> </p>
+<div th:insert="fragments/header :: header"></div>
+
+<div class="main main-product">
+    <h1>Réservez dès maintenant votre <span th:utext="${vehicule.category.name}"></span></h1>
+    <div class="card-content">
+        <div class="card">
+            <div class="top-card">
+                <p th:utext="${vehicule.id}"></p>
+                <p th:utext="${vehicule.matriculation}"></p>
+            </div>
+            <div class="brand-card">
+                <h3 th:utext="${vehicule.model.brand_id.name}"></h3>
+                <img th:src="@{/images/} + ${vehicule.model.brand_id.imglogo}" class="brand-logo">
+            </div>
+            <div class="btm-card">
+                <h2 th:utext="${vehicule.model.name}"></h2>
+                <img th:src="@{/images/} + ${vehicule.image}" class="img-vehicule">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragments/footer :: footer"></div>
 
 </body>
 </html>

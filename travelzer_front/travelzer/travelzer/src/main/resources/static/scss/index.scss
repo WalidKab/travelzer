@@ -1,14 +1,29 @@
+h1{
+    font-size: 2.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    span{
+        font-weight: bold;
+    }
+}
+
 header{
     background: black;
     height: 6rem;
     color : white;
 }
 
+.main{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .header-links{
     display:flex;
     flex-direction : row;
     padding-top : 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .header-right{
@@ -34,14 +49,14 @@ header{
         color: white;
         height: 11.5rem;
         background-color: grey;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         padding-left: 5rem;
     }
 }
 
 .dropdown-header{
-    width: 200%;
-    margin-left: -660px !important;
+    width: 45%;
+    margin-left: 17rem;
     display: none;
     font-size: 1.4rem;
     a{
@@ -64,10 +79,15 @@ header{
 
 footer{
     width:100%;
-    background-color: grey;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    a{
+        font-size:1.2rem;
+        margin-top:1rem;
+    }
 }
 
 .footer{
@@ -83,4 +103,62 @@ footer{
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+.brand-logo{
+    height:50px;
+    width: 50px;
+}
+
+.img-vehicule{
+    height:300px;
+    width: 480px;
+    margin-top: 1rem;
+}
+
+.card{
+    border-top: 3px solid grey;
+    border-right: 3px solid grey;
+    width : 500px;
+    border-radius : 0 10px 0 0;
+    margin-left: 5%;
+    p{
+        font-size: 1.2rem;
+    }
+    h2{
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-top : 0.5rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+}
+
+.brand-card, .top-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.btm-card, .brand-card{
+    border-top: 1px solid black;
+    margin-right: 1rem;
+}
+
+.btm-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-product{
+    background-color: #F8F8F8;
+}
+
+.card-content{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
