@@ -16,9 +16,6 @@ public class VehiculeController {
     @Autowired
     private DbVehicule dbVehicule;
 
-    @Autowired
-    private DbCategory dbCategory;
-
     @GetMapping(value = "/vehicules")
     public @ResponseBody
     Iterable<Vehicule> vehiculesList(){
@@ -44,12 +41,6 @@ public class VehiculeController {
     @DeleteMapping(value = "/vehicule/{id}")
     public void deleteVehicule(@PathVariable int id){
         dbVehicule.deleteById(id);
-    }
-
-    @GetMapping(value = "/categories")
-    public @ResponseBody
-    Iterable<Category> categoryList() {
-        return dbCategory.findAll();
     }
 
     @GetMapping(value = "/vehicules/category/{id}")

@@ -7,9 +7,17 @@ h1 span {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 header {
   background: black;
   height: 6rem;
+  color: white;
+}
+header a {
   color: white;
 }
 
@@ -157,8 +165,66 @@ footer a {
 }
 
 .card-content {
+  position: relative;
   padding-top: 10rem;
   padding-bottom: 10rem;
+}
+
+.calendar-content {
+  position: absolute;
+  margin-top: -40rem !important;
+  margin-left: 47rem !important;
+}
+.calendar-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calendar {
+  width: 520px !important;
+}
+
+.vanilla-calendar-week {
+  background-color: grey !important;
+}
+
+.a-btn {
+  margin-left: 57rem;
+  margin-top: -13rem;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+  transition: background-color padding;
+  transition-duration: 0.5s;
+  -webkit-box-shadow: 0px 0px 12px -3px #000000;
+  box-shadow: 0px 0px 12px -3px #000000;
+  position: absolute;
+}
+
+.a-btn:hover {
+  background-color: grey;
+  padding: 1.2rem 2.2rem;
+  font-size: 1.2rem;
+  margin-left: 56rem;
+}
+
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.catalogue-grid .card-content {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.catalogue-grid .card {
+  color: black;
+}
+.catalogue-grid .a-catalogue:hover .card {
+  border-top: 3px solid blue;
+  border-right: 3px solid blue;
+  padding-top: 1.5rem;
+  margin-top: -1rem;
 }
 
 /*# sourceMappingURL=index.css.map */

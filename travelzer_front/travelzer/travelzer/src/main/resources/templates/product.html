@@ -6,8 +6,12 @@
     <title th:utext="${vehicule.model.name} + ' ' + ${vehicule.matriculation}"></title>
     <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
     <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+    <link rel="stylesheet" th:href="@{/modules/vanilla-calendar-master/src/css/vanilla-calendar-min.css}">
+    <script th:src="@{/modules/vanilla-calendar-master/src/js/vanilla-calendar-min.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="compareDate()">
 
 <div th:insert="fragments/header :: header"></div>
 
@@ -29,9 +33,48 @@
             </div>
         </div>
     </div>
+
+    <div class="calendar-content">
+        <p>Vérifier la disponibilité du véhicule :</p>
+        <div id="myCalendar" class="vanilla-calendar calendar"></div>
+    </div>
+
+    <a class="a-btn">Réservez dès maintenant</a>
 </div>
 
 <div th:insert="fragments/footer :: footer"></div>
+
+<script th:inline="javascript">
+function setDate(data,elem){
+<!--    debugger;-->
+}
+    var myCalendar = new VanillaCalendar({
+    selector: "#myCalendar",
+    pastDates: false,
+    onSelect: (data, elem) => {
+    setDate(data,elem)
+    }
+    })
+
+    var reservations =[[${reservations}]];
+
+    function getReservations(){
+    reservations.forEach(element => console.log(element.id))
+    }
+
+
+    function compareDate(data, elem){
+        for(let reservation of reservations){
+<!--        debugger;-->
+            let date = new Date(reservation.datestart)
+<!--             debugger;-->
+             let div = $('div[data-calendar-date="'+date+'"]');
+<!--             debugger;-->
+             $(div).forEach(function(){ $(this).attr('vanilla-calendar-date--active', 'vanilla-calendar-date--disabled')});
+        }
+    }
+
+</script>
 
 </body>
 </html>

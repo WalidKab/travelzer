@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:utext="${vehicule.model.name} + ' ' + ${vehicule.matriculation}"></title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
-<body>
 
+<body>
 </body>
 </html>
