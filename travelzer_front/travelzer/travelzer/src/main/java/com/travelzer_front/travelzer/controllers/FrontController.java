@@ -43,7 +43,21 @@ public class FrontController {
         Vehicule vehicule = new RestTemplate().getForObject(urlCatalogue + "/vehicule/" + id, Vehicule.class);
         model.addAttribute("vehicule", vehicule);
 
+        Reservation reservation = new Reservation();
+        model.addAttribute("reservation", reservation);
 
-        return "product";
+        return "reservation";
     }
+
+    @PostMapping(value = "/vehicule/{id}/reserve")
+    public String addReservation(@ModelAttribute("reservation") Reservation reservationForm) {
+
+        boolean userExist = new RestTemplate().getForObject(urlUsers + "/licencenumber/" + reservationForm.getLicenceNumber(), boolean.class);
+
+//        if (!userExist){
+//
+//        }
+        return "reservation";
+    }
+
 }

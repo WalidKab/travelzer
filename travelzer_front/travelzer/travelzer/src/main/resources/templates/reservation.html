@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
+<table>
+    <tr>
+        <th>ID :</th>
+        <th>Nom :</th>
+        <th>Couleur :</th>
+        <th>Nb de km :</th>
+        <th>Image :</th>
+        <th>Immatriculation :</th>
+        <th>Tarif :</th>
+        <th>Catégorie :</th>
+    </tr>
+
+    <tr>
+        <td th:utext="${vehicule.id}"></td>
+        <td th:utext="${vehicule.model.name}"></td>
+        <td th:utext="${vehicule.color}"></td>
+        <td th:utext="${vehicule.kmcounter}"></td>
+        <td><img th:src="${vehicule.image}"></td>
+        <td th:utext="${vehicule.matriculation}"></td>
+        <td th:utext="${vehicule.pricerate}"></td>
+        <td th:utext="${vehicule.category.name}"></td>
+    </tr>
+</table>
+
+
+
+<form th:action="@{/backoffice/dashboard/reserve}"
+      th:object="${reservation}" method="POST">
+
+    Numero de permis :
+    <input type="text" th:field="*{licenceNumber}" /><br/>
+
+    Date de debut :
+    <input type="date" th:field="*{datestart}" /><br/>
+
+    Date de fin :
+    <input type="date" th:field="*{dateend}" /><br/>
+
+    KM estimation :
+    <input type="number" th:field="*{estimatedkm}" /><br/>
+
+    <input type="submit" value="Create" />
+</form>
+
+
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>
 </html>
