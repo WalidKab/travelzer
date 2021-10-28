@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
+<body>
+
+<form th:action="@{/backoffice/dashboard/addVehicle}"
+      th:object="${vehicle}" method="POST">
+
+    Color:
+    <input type="text" th:field="*{color}" /><br/>
+
+    Kms counter:
+    <input type="number" th:field="*{kmcounter}" /><br/>
+
+    Image :
+    <input type="file" th:field="*{image}" /><br/>
+
+    Matriculation :
+    <input type="text" maxlength="7" minlength="7" th:field="*{matriculation}" /><br/>
+
+    Price Rate :
+    <input type="number" step="0.1" th:field="*{pricerate}" /><br/>
+
+    Category:
+    <select th:field="${vehicle.category.id}">
+        <option th:each ="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+    </select><br/>
+
+    Model :
+    <select th:field="${vehicle.model.id}">
+        <option th:each ="model : ${models}" th:value="${model.id}" th:text="${model.name}"></option>
+    </select><br/>
+
+    <input type="submit" value="Create" />
+</form>
+
+
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
+</body>
+</html>

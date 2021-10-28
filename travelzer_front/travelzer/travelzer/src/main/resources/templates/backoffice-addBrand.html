@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
+<body>
+
+<form th:action="@{/backoffice/dashboard/addBrand}"
+      th:object="${brand}" method="POST">
+
+    Name :
+    <input type="text" th:field="*{name}" /><br/>
+
+    logo :
+    <input type="file" th:field="*{imglogo}" /><br/>
+
+    <input type="submit" value="Create" />
+</form>
+
+
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
+</body>
+</html>
