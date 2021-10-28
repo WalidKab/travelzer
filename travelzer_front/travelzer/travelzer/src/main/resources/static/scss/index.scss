@@ -130,14 +130,18 @@ footer{
     width : 500px;
     border-radius : 0 10px 0 0;
     margin-left: 5%;
+    transition: border-top, border-right, padding-top, margin-top;
+    transition-duration: .4s;
     p{
         font-size: 1.2rem;
     }
+
     h2{
         font-size: 1.7rem;
         font-weight: bold;
         margin-top : 0.5rem;
     }
+
     h3{
         font-size: 1.5rem;
     }
@@ -226,11 +230,33 @@ footer{
   .a-catalogue{
       &:hover{
         .card{
-            border-top: 3px solid blue;
-            border-right: 3px solid blue;
+            border-top: 3px solid #B0C4DE;
+            border-right: 3px solid #B0C4DE;
             padding-top: 1.5rem;
             margin-top:-1rem;
         }
       }
   }
+}
+
+.bo{
+    width:80%;
+    margin-left:10%;
+    background-color: grey;
+}
+
+.main-bo{
+    width : 80%;
+    margin-left:10%;
+    background-color: #B0C4DE;
+    table{
+          display: inline-table;
+          margin: 1em;
+          border-collapse: collapse;
+          th, td{
+                  border: solid 1px grey;
+                  padding : 1rem 2rem;
+                  text-align: center;
+          }
+    }
 }

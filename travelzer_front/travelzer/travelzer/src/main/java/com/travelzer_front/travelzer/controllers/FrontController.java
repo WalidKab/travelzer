@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
-public class HomeController {
+public class FrontController {
 
     @Value("${server.url.catalogue}")
     private String urlCatalogue;
