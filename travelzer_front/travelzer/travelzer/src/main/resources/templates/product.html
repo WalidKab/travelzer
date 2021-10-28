@@ -39,7 +39,7 @@
         <div id="myCalendar" class="vanilla-calendar calendar"></div>
     </div>
 
-    <a class="a-btn">Réservez dès maintenant</a>
+    <a class="a-btn" th:href="@{/vehicule} + '/' + ${vehicule.id} + @{/reserve}">reserve</a>
 </div>
 
 <div th:insert="fragments/footer :: footer"></div>
@@ -75,6 +75,7 @@ function setDate(data,elem){
     }
 
 </script>
+
 
 </body>
 </html>

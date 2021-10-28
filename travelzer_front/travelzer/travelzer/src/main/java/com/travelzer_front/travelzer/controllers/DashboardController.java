@@ -111,6 +111,13 @@ public class DashboardController {
         return "redirect:/backoffice/dashboard";
     }
 
+    @PostMapping(value = baseRoute + "/deleteVehicule/{id}")
+    public String deleteVehicule(@PathVariable int id) {
+
+        new RestTemplate().delete(urlCatalogue + "/vehicule/" + id);
+        return "redirect:/backoffice/dashboard";
+    }
+
     //    === routes for Categories
 
     @GetMapping(value = baseRoute + "/addCategory")
@@ -200,12 +207,6 @@ public class DashboardController {
         return "redirect:/backoffice/dashboard";
     }
 
-    @DeleteMapping(value = baseRoute + "/deleteBrand/{id}")
-    public String deleteBrand(@PathVariable int id) {
-
-        new RestTemplate().delete(urlCatalogue + "/brand/" + id);
-        return "redirect:/backoffice/dashboard";
-    }
 
 //    === routes for Model
 

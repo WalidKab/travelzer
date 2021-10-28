@@ -50,4 +50,26 @@ public class FrontController {
         return "product";
     }
 
+    @GetMapping(value = "/vehicule/{id}/reserve")
+    public String reserveVehicle(Model model, @PathVariable int id) {
+        Vehicule vehicule = new RestTemplate().getForObject(urlCatalogue + "/vehicule/" + id, Vehicule.class);
+        model.addAttribute("vehicule", vehicule);
+
+        Reservation reservation = new Reservation();
+        model.addAttribute("reservation", reservation);
+
+        return "reservation";
+    }
+
+    @PostMapping(value = "/vehicule/{id}/reserve")
+    public String addReservation(@ModelAttribute("reservation") Reservation reservationForm) {
+
+        boolean userExist = new RestTemplate().getForObject(urlUsers + "/licencenumber/" + reservationForm.getLicenceNumber(), boolean.class);
+
+//        if (!userExist){
+//
+//        }
+        return "reservation";
+    }
+
 }

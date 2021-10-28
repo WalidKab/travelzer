@@ -38,4 +38,9 @@ public class UserController {
     public void deleteUser(@PathVariable int id){
         dbDao.deleteById(id);
     }
+
+    @GetMapping(value = "/licencenumber/{string}")
+    public boolean existByLicenceNumber(@PathVariable String string){
+        return dbDao.existByLicencenumber(string);
+    }
 }
