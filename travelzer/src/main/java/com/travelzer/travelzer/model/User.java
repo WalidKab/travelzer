@@ -19,6 +19,7 @@ public class User {
     @Column(name = "lastname", length = 50, nullable = false)
     private String lastname;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "birthday", nullable = false)
     private Date birthday;
 
@@ -34,6 +35,7 @@ public class User {
     @Column(name = "licencenumber", length = 150, nullable = false)
     private String licencenumber;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "licencedate", nullable = false)
     private Date licencedate;
 

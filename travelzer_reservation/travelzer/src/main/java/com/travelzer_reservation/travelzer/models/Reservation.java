@@ -1,5 +1,7 @@
 package com.travelzer_reservation.travelzer.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,9 +13,11 @@ public class Reservation {
     @GeneratedValue
     private int id;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "datestart", nullable = false)
     private Date datestart;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "dateend", nullable = false)
     private Date dateend;
 

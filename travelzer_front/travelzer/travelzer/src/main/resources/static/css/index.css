@@ -128,7 +128,7 @@ footer a {
   width: 500px;
   border-radius: 0 10px 0 0;
   margin-left: 5%;
-  transition: border-top, border-right, padding-top, margin-top;
+  transition: border-top, border-right, padding-top, padding-right, margin-top;
   transition-duration: 0.4s;
 }
 .card p {
@@ -226,19 +226,20 @@ footer a {
   border-top: 3px solid #B0C4DE;
   border-right: 3px solid #B0C4DE;
   padding-top: 1.5rem;
+  padding-right: 1.5rem;
   margin-top: -1rem;
 }
 
 .bo {
   width: 80%;
   margin-left: 10%;
-  background-color: grey;
+  background-color: #B0C4DE;
 }
 
 .main-bo {
   width: 80%;
   margin-left: 10%;
-  background-color: #B0C4DE;
+  background-color: #F8F8F8;
   display: flex;
   flex-direction: column;
 }

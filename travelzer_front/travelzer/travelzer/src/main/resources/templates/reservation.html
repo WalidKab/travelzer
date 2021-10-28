@@ -33,7 +33,7 @@
 
 
 
-<form th:action="@{/backoffice/dashboard/reserve}"
+<form th:action="@{/vehicule} + '/' + ${vehicule.id} + @{/reserve}"
       th:object="${reservation}" method="POST">
 
     Numero de permis :

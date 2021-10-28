@@ -1,5 +1,7 @@
 package com.travelzer_front.travelzer.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
@@ -10,6 +12,7 @@ public class User {
 
     private String lastname;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
 
     private String email;
@@ -20,6 +23,7 @@ public class User {
 
     private String licencenumber;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date licencedate;
 
     public User() {

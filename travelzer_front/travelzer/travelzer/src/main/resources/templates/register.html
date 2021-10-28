@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
+<body>
+
+<div th:insert="fragments/header :: header"></div>
+
+<div class="bo main-add">
+    <div class="main-bo bo-add">
+        <h1>Créer votre compte</h1>
+        <form th:action="@{/user/register}"
+              th:object="${user}" method="POST">
+
+            <div class="div-input">
+                <p>Firstame :</p>
+                <input type="text" th:field="*{firstname}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Lastname :</p>
+                <input type="text" th:field="*{lastname}"/><br/>
+            </div>
+            <div class="div-input">
+                <p>Birthday :</p>
+                <input type="date" th:field="*{birthday}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Email :</p>
+                <input type="email" th:field="*{email}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Phone :</p>
+                <input type="text" th:field="*{phone}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Password :</p>
+                <input type="password" th:field="*{password}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Licence number :</p>
+                <input type="text" th:field="*{licencenumber}"/><br/>
+            </div>
+
+            <div class="div-input">
+                <p>Licence date :</p>
+                <input type="date" th:field="*{licencedate}"/><br/>
+            </div>
+
+            <input class="btn-create" type="submit" value="Create"/>
+        </form>
+    </div>
+</div>
+
+<div th:insert="fragments/footer :: footer"></div>
+
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
+</body>
+</html>

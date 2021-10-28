@@ -41,6 +41,11 @@ public class UserController {
 
     @GetMapping(value = "/licencenumber/{string}")
     public boolean existByLicenceNumber(@PathVariable String string){
-        return dbDao.existByLicencenumber(string);
+        return dbDao.existsByLicencenumber(string);
+    }
+
+    @GetMapping(value = "/getuser/{string}")
+    public Optional<User> getUserByLicencenumber(@PathVariable String string){
+        return dbDao.getUserByLicencenumber(string);
     }
 }
