@@ -3,43 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
     <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
-<form th:action="@{/backoffice/dashboard/editModel} + '/' + ${id}"
-      th:object="${model}" method="POST">
+<div class="bo main-add">
+    <div class="main-bo bo-add">
+        <form th:action="@{/backoffice/dashboard/editModel} + '/' + ${id}"
+              th:object="${model}" method="POST">
 
-    name:
-    <input type="text" th:field="*{name}" /><br/>
+            <div class="div-input">
+                name:
+                <input type="text" th:field="*{name}"/><br/>
+            </div>
 
-    seatcapacity:
-    <input type="number" th:field="*{seatcapacity}" /><br/>
+            <div class="div-input">
+                seatcapacity:
+                <input type="number" th:field="*{seatcapacity}"/><br/>
+            </div>
 
-    consumption :
-    <input type="number" th:field="*{consumption}" /><br/>
+            <div class="div-input">
+                consumption :
+                <input type="number" th:field="*{consumption}"/><br/>
+            </div>
 
-    cc :
-    <input type="number" th:field="*{cc}" /><br/>
+            <div class="div-input">
+                cc :
+                <input type="number" th:field="*{cc}"/><br/>
+            </div>
 
-    volume :
-    <input type="number" th:field="*{volume}" /><br/>
+            <div class="div-input">
+                volume :
+                <input type="number" th:field="*{volume}"/><br/>
+            </div>
 
-    priceperkm :
-    <input type="number" th:field="*{priceperkm}" /><br/>
+            <div class="div-input">
+                priceperkm :
+                <input type="number" th:field="*{priceperkm}"/><br/>
+            </div>
 
-    horses :
-    <input type="number" th:field="*{horses}" /><br/>
+            <div class="div-input">
+                horses :
+                <input type="number" th:field="*{horses}"/><br/>
+            </div>
 
-    Brand:
-    <select th:field="${model.brand_id.id}">
-        <option th:each ="brand : ${brands}" th:value="${brand.id}" th:text="${brand.name}"></option>
-    </select><br/>
+            <div class="div-input">
+                Brand:
+                <select th:field="${model.brand_id.id}">
+                    <option th:each="brand : ${brands}" th:value="${brand.id}" th:text="${brand.name}"></option>
+                </select><br/>
+            </div>
 
-    <input type="submit" value="Update" />
-</form>
+            <input type="submit" value="Update"/>
+        </form>
 
-
+    </div>
+</div>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>
 </html>

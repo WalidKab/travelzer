@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
     <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
-<h1 th:utext="${vehicle.model.name}"> </h1><br/>
+<div class="bo main-add">
+    <div class="main-bo bo-add">
+        <h1 th:utext="${vehicle.model.name}"></h1><br/>
 
-<form th:action="@{/backoffice/dashboard/editVehicle} + '/' + ${id}"
-      th:object="${vehicle}" method="POST">
+        <form th:action="@{/backoffice/dashboard/editVehicle} + '/' + ${id}"
+              th:object="${vehicle}" method="POST">
 
-    Color:
-    <input type="text" th:field="*{color}" /><br/>
+            <div class="div-input">
+                Color:
+                <input type="text" th:field="*{color}"/><br/>
+            </div>
 
-    Kms counter:
-    <input type="text" th:field="*{kmcounter}" /><br/>
+            <div class="div-input">
+                Kms counter:
+                <input type="text" th:field="*{kmcounter}"/><br/>
+            </div>
 
-    Image :
-    <input type="text" th:field="*{image}" /><br/>
+            <div class="div-input">
+                Image :
+                <input type="text" th:field="*{image}"/><br/>
+            </div>
 
-    Matriculation :
-    <input type="text" th:field="*{matriculation}" /><br/>
+            <div class="div-input">
+                Matriculation :
+                <input type="text" th:field="*{matriculation}"/><br/>
+            </div>
 
-    Category:
-    <select th:field="${vehicle.category.id}">
-        <option th:each ="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
-    </select><br/>
+            <div class="div-input">
+                Category:
+                <select th:field="${vehicle.category.id}">
+                    <option th:each="category : ${categories}" th:value="${category.id}"
+                            th:text="${category.name}"></option>
+                </select><br/>
+            </div>
 
-    <input type="submit" value="Update" />
-</form>
-
+            <input class="btn-create" type="submit" value="Update"/>
+        </form>
+    </div>
+</div>
 
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>

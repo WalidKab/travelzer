@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
     <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
-<form th:action="@{/backoffice/dashboard/editBrand} + '/' + ${id}"
-      th:object="${brand}" method="POST">
+<div class="bo main-add">
+    <div class="main-bo bo-add">
+        <form th:action="@{/backoffice/dashboard/editBrand} + '/' + ${id}"
+              th:object="${brand}" method="POST">
 
-    Name:
-    <input type="text" th:field="*{name}" /><br/>
+            <div class="div-input">
+                <p>Name:</p>
+                <input type="text" th:field="*{name}"/><br/>
+            </div>
 
-    Logo :
-    <input type="file" th:field="*{imglogo}" /><br/>
+            <div class="div-input">
+                <p>Logo :</p>
+                <input type="file" th:field="*{imglogo}"/><br/>
+            </div>
 
-    <input type="submit" value="Update" />
-</form>
+            <input class="btn-create" type="submit" value="Update"/>
+        </form>
 
 
-<form th:action="@{/backoffice/dashboard/deleteBrand} + '/' + ${brand.id}" method="POST">
-    <input type="submit" value="Delete" />
-</form>
-
+        <form th:action="@{/backoffice/dashboard/deleteBrand} + '/' + ${brand.id}" method="POST">
+            <input class="btn-create" type="submit" value="Delete"/>
+        </form>
+    </div>
+</div>
 
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>

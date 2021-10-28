@@ -239,16 +239,78 @@ footer a {
   width: 80%;
   margin-left: 10%;
   background-color: #B0C4DE;
+  display: flex;
+  flex-direction: column;
 }
 .main-bo table {
+  width: 90%;
   display: inline-table;
-  margin: 1em;
   border-collapse: collapse;
 }
 .main-bo table th, .main-bo table td {
   border: solid 1px grey;
-  padding: 1rem 2rem;
+  padding: 1rem;
   text-align: center;
+}
+
+.table-bo {
+  margin-top: 5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-top: 1px solid black;
+  padding-top: 3rem;
+}
+.table-bo:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.table-bo:last-child {
+  margin-bottom: 5rem;
+}
+.table-bo .div-btn {
+  margin-bottom: 2rem;
+}
+.table-bo .a-btn {
+  position: relative;
+  margin: 0;
+}
+.table-bo .a-btn:hover {
+  position: relative;
+  margin: 0;
+}
+
+.bo-add form {
+  display: flex;
+  flex-direction: column;
+}
+.bo-add .div-input {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.bo-add .div-input input {
+  margin-top: 2rem;
+  resize: horizontal;
+  width: 900px;
+  height: 2rem;
+}
+.bo-add p {
+  margin-left: 3rem;
+}
+
+.btn-create {
+  width: 10rem;
+  height: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 47%;
+  background-color: black;
+  color: white;
+  transition: background-color;
+  transition-duration: 0.4s;
+}
+.btn-create:hover {
+  background-color: grey;
 }
 
 /*# sourceMappingURL=index.css.map */

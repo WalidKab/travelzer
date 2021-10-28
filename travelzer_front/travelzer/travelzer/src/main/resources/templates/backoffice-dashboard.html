@@ -4,134 +4,148 @@
     <meta charset="UTF-8">
     <title>Travelzer - Home</title>
     <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
-    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all"></head>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
 <body>
 <div class="bo">
     <div class="main-bo">
-        <a th:href="@{/backoffice/dashboard/addVehicle}">Add Vehicle</a>
+        <div class="table-bo">
+            <div class="div-btn">
+                <a class="a-btn" th:href="@{/backoffice/dashboard/addVehicle}">Add Vehicle</a>
+            </div>
 
-        <table>
-            <tr class="tr-bo-top">
-                <th>ID :</th>
-                <th>Nom :</th>
-                <th>Couleur :</th>
-                <th>Nb de km :</th>
-                <th>Image :</th>
-                <th>Immatriculation :</th>
-                <th>Tarif :</th>
-                <th>Catégorie :</th>
-                <th>Edit :</th>
-            </tr>
+            <table>
+                <tr class="tr-bo-top">
+                    <th>ID :</th>
+                    <th>Nom :</th>
+                    <th>Couleur :</th>
+                    <th>Nb de km :</th>
+                    <th>Image :</th>
+                    <th>Immatriculation :</th>
+                    <th>Tarif :</th>
+                    <th>Catégorie :</th>
+                    <th>Edit :</th>
+                </tr>
 
-            <tr th:each="vehicule : ${vehiculeList}" class="tr-bo">
-                <td th:utext="${vehicule.id}"></td>
-                <td th:utext="${vehicule.model.name}"></td>
-                <td th:utext="${vehicule.color}"></td>
-                <td th:utext="${vehicule.kmcounter}"></td>
-                <td><img th:src="${vehicule.image}"></td>
-                <td th:utext="${vehicule.matriculation}"></td>
-                <td th:utext="${vehicule.pricerate}"></td>
-                <td th:utext="${vehicule.category.name}"></td>
-                <td><a th:href="@{/backoffice/dashboard/editVehicle} + '/' + ${vehicule.id}">Edit</a></td>
-            </tr>
-        </table>
-
+                <tr th:each="vehicule : ${vehiculeList}" class="tr-bo">
+                    <td th:utext="${vehicule.id}"></td>
+                    <td th:utext="${vehicule.model.name}"></td>
+                    <td th:utext="${vehicule.color}"></td>
+                    <td th:utext="${vehicule.kmcounter}"></td>
+                    <td><img th:src="${vehicule.image}"></td>
+                    <td th:utext="${vehicule.matriculation}"></td>
+                    <td th:utext="${vehicule.pricerate}"></td>
+                    <td th:utext="${vehicule.category.name}"></td>
+                    <td><a th:href="@{/backoffice/dashboard/editVehicle} + '/' + ${vehicule.id}">Edit</a></td>
+                </tr>
+            </table>
+        </div>
         <hr>
 
-        <a th:href="@{/backoffice/dashboard/addModel}">Add Model</a>
+        <div class="table-bo">
+            <div class="div-btn">
+                <a th:href="@{/backoffice/dashboard/addModel}" class="a-btn">Add Model</a>
+            </div>
 
-        <table>
-            <tr class="tr-bo-top">
-                <th>ID :</th>
-                <th>Nom :</th>
-                <th>seat capacity :</th>
-                <th>consumption :</th>
-                <th>cc :</th>
-                <th>volume :</th>
-                <th>priceperkm :</th>
-                <th>horses :</th>
-                <th>brand :</th>
-                <td>Edit :</td>
-            </tr>
+            <table>
+                <tr class="tr-bo-top">
+                    <th>ID :</th>
+                    <th>Nom :</th>
+                    <th>seat capacity :</th>
+                    <th>consumption :</th>
+                    <th>cc :</th>
+                    <th>volume :</th>
+                    <th>priceperkm :</th>
+                    <th>horses :</th>
+                    <th>brand :</th>
+                    <td>Edit :</td>
+                </tr>
 
-            <tr th:each="model : ${models}" class="tr-bo">
-                <td th:utext="${model.id}"></td>
-                <td th:utext="${model.name}"></td>
-                <td th:utext="${model.seatcapacity}"></td>
-                <td th:utext="${model.consumption}"></td>
-                <td th:utext="${model.cc}"></td>
-                <td th:utext="${model.volume}"></td>
-                <td th:utext="${model.priceperkm}"></td>
-                <td th:utext="${model.horses}"></td>
-                <td th:utext="${model.brand_id.name}"></td>
-                <td><a th:href="@{/backoffice/dashboard/editModel} + '/' + ${model.id}">Edit</a></td>
-            </tr>
-        </table>
-
+                <tr th:each="model : ${models}" class="tr-bo">
+                    <td th:utext="${model.id}"></td>
+                    <td th:utext="${model.name}"></td>
+                    <td th:utext="${model.seatcapacity}"></td>
+                    <td th:utext="${model.consumption}"></td>
+                    <td th:utext="${model.cc}"></td>
+                    <td th:utext="${model.volume}"></td>
+                    <td th:utext="${model.priceperkm}"></td>
+                    <td th:utext="${model.horses}"></td>
+                    <td th:utext="${model.brand_id.name}"></td>
+                    <td><a th:href="@{/backoffice/dashboard/editModel} + '/' + ${model.id}">Edit</a></td>
+                </tr>
+            </table>
+        </div>
         <hr>
+        <div class="table-bo">
+            <div class="div-btn">
+                <a th:href="@{/backoffice/dashboard/addCategory}" class="a-btn">Add Category</a>
+            </div>
 
-        <a th:href="@{/backoffice/dashboard/addCategory}">Add Category</a>
+            <table>
+                <tr class="tr-bo-top">
+                    <th>ID :</th>
+                    <th>Nom :</th>
+                    <th>Base price :</th>
+                    <th>Edit :</th>
+                </tr>
 
-        <table>
-            <tr class="tr-bo-top">
-                <th>ID :</th>
-                <th>Nom :</th>
-                <th>Base price :</th>
-                <th>Edit :</th>
-            </tr>
-
-            <tr th:each="category : ${categories}" class="tr-bo">
-                <td th:utext="${category.id}"></td>
-                <td th:utext="${category.name}"></td>
-                <td th:utext="${category.baseprice} + ' €'"></td>
-                <td><a th:href="@{/backoffice/dashboard/editCategory} + '/' + ${category.id}">Edit</a></td>
-            </tr>
-        </table>
-
+                <tr th:each="category : ${categories}" class="tr-bo">
+                    <td th:utext="${category.id}"></td>
+                    <td th:utext="${category.name}"></td>
+                    <td th:utext="${category.baseprice} + ' €'"></td>
+                    <td><a th:href="@{/backoffice/dashboard/editCategory} + '/' + ${category.id}">Edit</a></td>
+                </tr>
+            </table>
+        </div>
         <hr>
-        <a th:href="@{/backoffice/dashboard/addBrand}">Add Brand</a>
+        <div class="table-bo">
+            <div class="div-btn">
+                <a th:href="@{/backoffice/dashboard/addBrand}" class="a-btn">Add Brand</a>
+            </div>
 
-        <table>
-            <tr class="tr-bo-top">
-                <th>ID :</th>
-                <th>Nom :</th>
-                <th>logo :</th>
-                <th>Edit :</th>
-            </tr>
+            <table>
+                <tr class="tr-bo-top">
+                    <th>ID :</th>
+                    <th>Nom :</th>
+                    <th>logo :</th>
+                    <th>Edit :</th>
+                </tr>
 
-            <tr th:each="brand : ${brands}" class="tr-bo">
-                <td th:utext="${brand.id}"></td>
-                <td th:utext="${brand.name}"></td>
-                <td><img th:src="${brand.imglogo}"></td>
-                <td><a th:href="@{/backoffice/dashboard/editBrand} + '/' + ${brand.id}">Edit</a></td>
-            </tr>
-        </table>
-
+                <tr th:each="brand : ${brands}" class="tr-bo">
+                    <td th:utext="${brand.id}"></td>
+                    <td th:utext="${brand.name}"></td>
+                    <td><img th:src="${brand.imglogo}"></td>
+                    <td><a th:href="@{/backoffice/dashboard/editBrand} + '/' + ${brand.id}">Edit</a></td>
+                </tr>
+            </table>
+        </div>
         <hr>
-        <table>
-            <tr class="tr-bo-top">
-                <th>ID :</th>
-                <th>Firstname :</th>
-                <th>Lastname :</th>
-                <th>Birthday :</th>
-                <th>Email :</th>
-                <th>phone :</th>
-                <th>Licence Number :</th>
-                <th>Licence Date :</th>
-                <th>Edit :</th>
-            </tr>
+        <div class="table-bo">
+            <table>
+                <tr class="tr-bo-top">
+                    <th>ID :</th>
+                    <th>Firstname :</th>
+                    <th>Lastname :</th>
+                    <th>Birthday :</th>
+                    <th>Email :</th>
+                    <th>phone :</th>
+                    <th>Licence Number :</th>
+                    <th>Licence Date :</th>
+                    <th>Edit :</th>
+                </tr>
 
-            <tr th:each="user : ${usersList}" class="tr-bo">
-                <td th:utext="${user.id}"></td>
-                <td th:utext="${user.firstname}"></td>
-                <td th:utext="${user.lastname}"></td>
-                <td th:utext="${user.birthday}"></td>
-                <td><img th:src="${user.email}"></td>
-                <td th:utext="${user.phone}"></td>
-                <td th:utext="${user.licencenumber}"></td>
-                <td th:utext="${user.licencedate}"></td>
-            </tr>
-        </table>
+                <tr th:each="user : ${usersList}" class="tr-bo">
+                    <td th:utext="${user.id}"></td>
+                    <td th:utext="${user.firstname}"></td>
+                    <td th:utext="${user.lastname}"></td>
+                    <td th:utext="${user.birthday}"></td>
+                    <td><img th:src="${user.email}"></td>
+                    <td th:utext="${user.phone}"></td>
+                    <td th:utext="${user.licencenumber}"></td>
+                    <td th:utext="${user.licencedate}"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>

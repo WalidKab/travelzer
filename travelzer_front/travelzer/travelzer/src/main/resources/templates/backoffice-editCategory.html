@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="/css/reset.css" media="all">
     <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
 </head>
 <body>
 
-<form th:action="@{/backoffice/dashboard/editCategory} + '/' + ${id}"
-      th:object="${category}" method="POST">
+<div class="bo main-add">
+    <div class="main-bo bo-add">
+        <form th:action="@{/backoffice/dashboard/editCategory} + '/' + ${id}"
+              th:object="${category}" method="POST">
 
-    Name:
-    <input type="text" th:field="*{name}" /><br/>
+            <div class="div-input">
+                Name:
+                <input type="text" th:field="*{name}"/><br/>
+            </div>
 
-    Base price:
-    <input type="number" th:field="*{baseprice}" /><br/>
-
-    <input type="submit" value="Update" />
-</form>
-
-
+            <div class="div-input">
+                Base price:
+                <input type="number" th:field="*{baseprice}"/><br/>
+            </div>
+            <input class="btn-create" type="submit" value="Update"/>
+        </form>
+    </div>
+</div>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>
 </html>
