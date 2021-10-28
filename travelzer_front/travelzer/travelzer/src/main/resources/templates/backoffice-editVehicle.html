@@ -32,6 +32,10 @@
     <input type="submit" value="Update" />
 </form>
 
+<form th:action="@{/backoffice/dashboard/deleteVehicule} + '/' + ${vehicle.id}" method="POST">
+    <input type="submit" value="Delete" />
+</form>
+
 
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>

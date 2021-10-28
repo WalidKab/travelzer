@@ -37,4 +37,13 @@ public class FrontController {
         model.addAttribute("vehicule", vehicule);
         return "product";
     }
+
+    @GetMapping(value = "/vehicule/{id}/reserve")
+    public String reserveVehicle(Model model, @PathVariable int id) {
+        Vehicule vehicule = new RestTemplate().getForObject(urlCatalogue + "/vehicule/" + id, Vehicule.class);
+        model.addAttribute("vehicule", vehicule);
+
+
+        return "product";
+    }
 }
