@@ -21,6 +21,16 @@ public class Vehicule {
     public Vehicule() {
     }
 
+    public Vehicule(float pricerate, int kmcounter, String matriculation, String color, String image, Category category, Model model) {
+        this.pricerate = pricerate;
+        this.kmcounter = kmcounter;
+        this.matriculation = matriculation;
+        this.color = color;
+        this.image = image;
+        this.category = category;
+        this.model = model;
+    }
+
     public Vehicule(int id, float pricerate, int kmcounter, String matriculation, String color, String image, Category category, Model model) {
         this.id = id;
         this.pricerate = pricerate;

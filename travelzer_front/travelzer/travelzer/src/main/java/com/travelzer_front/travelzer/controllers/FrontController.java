@@ -1,15 +1,14 @@
 package com.travelzer_front.travelzer.controllers;
 
-import com.travelzer_front.travelzer.models.Vehicule;
+import com.travelzer_front.travelzer.models.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-public class HomeController {
+public class FrontController {
 
     @Value("${server.url.catalogue}")
     private String urlCatalogue;
@@ -20,23 +19,22 @@ public class HomeController {
     @Value("${server.url.reservation}")
     private String urlReservation;
 
-    @GetMapping(value ={"/", "/home"})
-    public String index(){
-         return "index";
+    @GetMapping(value = {"/", "/home"})
+    public String index() {
+        return "index";
     }
 
-    @GetMapping(value ={"/catalogue"})
-    public String catalogue(Model model){
+    @GetMapping(value = {"/catalogue"})
+    public String catalogue(Model model) {
         Vehicule[] vehicules = new RestTemplate().getForObject(urlCatalogue + "/vehicules", Vehicule[].class);
         model.addAttribute("vehiculeList", vehicules);
         return "catalogue";
     }
 
     @GetMapping(value = "/vehicule/{id}")
-    public String showVehicle(Model model, @PathVariable int id){
+    public String showVehicle(Model model, @PathVariable int id) {
         Vehicule vehicule = new RestTemplate().getForObject(urlCatalogue + "/vehicule/" + id, Vehicule.class);
         model.addAttribute("vehicule", vehicule);
         return "product";
     }
-
 }

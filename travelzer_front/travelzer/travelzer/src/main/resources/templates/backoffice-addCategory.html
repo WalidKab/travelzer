@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelzer - Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="/css/index.css" media="all">
+</head>
+<body>
+
+<form th:action="@{/backoffice/dashboard/addCategory}"
+      th:object="${category}" method="POST">
+
+    Name :
+    <input type="text" th:field="*{name}" /><br/>
+
+    Base Price :
+    <input type="number" th:field="*{baseprice}" /><br/>
+
+    <input type="submit" value="Create" />
+</form>
+
+
+<script type="text/javascript" th:src="@{/js/custom.js}"></script>
+</body>
+</html>
